@@ -7,9 +7,12 @@ const reactor = readInput(Deno.args[0]);
 
 // Tries all possible splices of the given report and checks if any of them is safe.
 const tryAllSplices = (report: number[]): boolean => {
+  if (isReportSafe(report)) {
+    return true;
+  }
+  
   for (let i = 0; i < report.length; i++) {
-    const spliced = report.toSpliced(i, 1);
-    if (isReportSafe(spliced)) {
+    if (isReportSafe(report.toSpliced(i, 1))) {
       return true;
     }
   }
@@ -21,9 +24,7 @@ const tryAllSplices = (report: number[]): boolean => {
 
 let safeCount = 0;
 for (const report of reactor) {
-  if (isReportSafe(report)) {
-    safeCount++;
-  } else if (tryAllSplices(report)) {
+  if (tryAllSplices(report)) {
     safeCount++;
   }
 }
