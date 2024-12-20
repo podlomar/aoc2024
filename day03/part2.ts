@@ -6,26 +6,18 @@ const regex = /mul\((\d{1,3}),(\d{1,3})\)|do\(\)|don't\(\)/g;
 
 let result = 0;
 let mulIsOn = true;
-while (true) {
-  const match = regex.exec(input);
-  if (match === null) {
-    break;
-  }
-
+let match = regex.exec(input);
+while (match !== null) {
   if (match[0] === 'do()') {
     mulIsOn = true;
-    continue;
-  }
-
-  if (match[0] === 'don\'t()') {
+  } else if (match[0] === 'don\'t()') {
     mulIsOn = false;
-    continue;
-  }
-
-  if (mulIsOn) {
-    const [_, a, b] = match;
+  } else if (mulIsOn) {
+    const [, a, b] = match;
     result += Number(a) * Number(b);
   }
+
+  match = regex.exec(input);
 }
 
 console.log(`Result: ${result}`);

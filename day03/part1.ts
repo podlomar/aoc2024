@@ -5,14 +5,11 @@ const input = Deno.readTextFileSync(Deno.args[0]);
 const mulRegex = /mul\((\d{1,3}),(\d{1,3})\)/g;
 
 let result = 0;
-while (true) {
-  const match = mulRegex.exec(input);
-  if (match === null) {
-    break;
-  }
-
-  const [_, a, b] = match;
+let match = mulRegex.exec(input);
+while (match !== null) {
+  const [, a, b] = match;
   result += Number(a) * Number(b);
+  match = mulRegex.exec(input);
 }
 
 console.log(`Result: ${result}`);
