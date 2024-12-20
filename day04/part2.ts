@@ -3,6 +3,7 @@
 
 import { Plan } from "../lib/plan.ts";
 
+// Check if there is an XMAS pattern in the 3x3 square starting at startx, starty.
 const checkForXmas = (plan: Plan<string>, startx: number, starty: number): boolean => {
   let diagonal = '';
   let antiDiagonal = '';
@@ -17,6 +18,8 @@ const checkForXmas = (plan: Plan<string>, startx: number, starty: number): boole
     (antiDiagonal === 'MAS' || antiDiagonal === 'SAM')
   );
 }
+
+// Main program
 
 const plan = Plan.fromFile(Deno.args[0]);
 let xmasCount = 0;
