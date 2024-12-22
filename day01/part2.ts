@@ -1,7 +1,13 @@
+// -----------------------------------------------------------------------------
 // Advent of Code 2024: Day 1, Part 2
 // Run with deno run -R part2.ts your-input.txt
+// -----------------------------------------------------------------------------
 
 import { readInput } from './common.ts';
+
+//------------------------------------------------------------------------------
+// Functions
+//------------------------------------------------------------------------------
 
 // Finds the number of occurrences of the given item in the list.
 const countOccurrences = (list: number[], item: number): number => {
@@ -26,7 +32,9 @@ const computeSimilarity = (list1: number[], list2: number[]): number => {
   return similarity;
 };
 
-// Main program
+//------------------------------------------------------------------------------
+// Main
+//------------------------------------------------------------------------------  
 
 const { list1, list2 } = readInput(Deno.args[0]);
 const similarityScore = computeSimilarity(list1, list2);
