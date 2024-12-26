@@ -1,9 +1,13 @@
+//------------------------------------------------------------------------------
 // Advent of Code: Day 2, Part 2
 // Run with deno run -R part2.ts your-input.txt
+//------------------------------------------------------------------------------
 
 import { readInput, isReportSafe } from './common.ts';
 
-const reactor = readInput(Deno.args[0]);
+//------------------------------------------------------------------------------
+// Functions
+//------------------------------------------------------------------------------
 
 // Tries all possible splices of the given report and checks if any of them is safe.
 const tryAllSplices = (report: number[]): boolean => {
@@ -20,7 +24,11 @@ const tryAllSplices = (report: number[]): boolean => {
   return false;
 }
 
-// Main program
+//------------------------------------------------------------------------------
+// Main
+//------------------------------------------------------------------------------
+
+const reactor = readInput(Deno.args[0]);
 
 let safeCount = 0;
 for (const report of reactor) {

@@ -1,7 +1,13 @@
+//------------------------------------------------------------------------------
 // Advent of Code: Day 4, Part 1
 // Run with deno run -R part1.ts your-input.txt
+//------------------------------------------------------------------------------
 
 import { Plan } from "../lib/plan.ts";
+
+//------------------------------------------------------------------------------
+// Functions
+//------------------------------------------------------------------------------
 
 // Count the number of XMAS and SAMX words in a line of characters.
 const countLineXmas = (line: string[]): number => {
@@ -16,7 +22,9 @@ const countLineXmas = (line: string[]): number => {
   return count;
 }
 
-// Main program
+//------------------------------------------------------------------------------
+// Main
+//------------------------------------------------------------------------------
 
 const plan = Plan.fromFile(Deno.args[0]);
 const lines = [

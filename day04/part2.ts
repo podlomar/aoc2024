@@ -1,7 +1,13 @@
+//------------------------------------------------------------------------------
 // Advent of Code: Day 4, Part 2
 // Run with deno run -R part2.ts your-input.txt
+//------------------------------------------------------------------------------
 
 import { Plan } from "../lib/plan.ts";
+
+//------------------------------------------------------------------------------
+// Functions
+//------------------------------------------------------------------------------
 
 // Check if there is an XMAS pattern in the 3x3 square starting at startx, starty.
 const checkForXmas = (plan: Plan<string>, startx: number, starty: number): boolean => {
@@ -19,7 +25,9 @@ const checkForXmas = (plan: Plan<string>, startx: number, starty: number): boole
   );
 }
 
-// Main program
+//------------------------------------------------------------------------------
+// Main
+//------------------------------------------------------------------------------
 
 const plan = Plan.fromFile(Deno.args[0]);
 let xmasCount = 0;

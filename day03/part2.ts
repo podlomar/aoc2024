@@ -1,5 +1,7 @@
+//------------------------------------------------------------------------------
 // Advent of Code: Day 3 Part 2
 // Run with deno run -R part2.ts your-input.txt
+//------------------------------------------------------------------------------
 
 const input = Deno.readTextFileSync(Deno.args[0]);
 const regex = /mul\((\d{1,3}),(\d{1,3})\)|do\(\)|don't\(\)/g;
